@@ -1,8 +1,8 @@
 <div>
   <h1>User Profile</h1>
-  <button (click)="login()">Login with Spotify</button>
-  <pre *ngIf="userProfile">{{ userProfile | json }}</pre>
-  <p *ngIf="!userProfile && !loading">No profile data available.</p>
+  <button (click)="login()"
+          mat-raised-button
+          color="primary">Login with Spotify</button>
 
   <app-playlists *ngIf="userProfile"></app-playlists>
 </div>

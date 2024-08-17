@@ -1,8 +1,11 @@
 <div>
   <h1>Playlists</h1>
   <div *ngIf="playlists">
-    <li *ngFor="let playlist of playlists">
-      {{ playlist.name }}
-    </li>
+    <mat-card *ngFor="let playlist of playlists"
+              appearance="outlined"
+              class="m-2"
+              style="max-width: 700px; cursor: pointer;">
+      <mat-card-content>{{ playlist.name }}</mat-card-content>
+    </mat-card>
   </div>
 </div>

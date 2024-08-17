@@ -2,14 +2,18 @@ import {Component, OnInit} from '@angular/core';
 import {SpotifyApiService} from "../../services/spotify-api/spotify-api.service";
 import {NgForOf, NgIf} from "@angular/common";
 import {Playlist} from "../../types";
-import {map} from "rxjs";
+import {MatButtonModule} from "@angular/material/button";
+import {MatCard, MatCardContent} from "@angular/material/card";
 
 @Component({
   selector: 'app-playlists',
   standalone: true,
   imports: [
     NgForOf,
-    NgIf
+    NgIf,
+    MatButtonModule,
+    MatCard,
+    MatCardContent
   ],
   templateUrl: './playlists.component.html',
   styleUrl: './playlists.component.css'

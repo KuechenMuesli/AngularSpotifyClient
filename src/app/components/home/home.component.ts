@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import {SpotifyApiService} from "../../services/spotify-api/spotify-api.service";
 import { CommonModule } from '@angular/common';
 import {PlaylistsComponent} from "../playlists/playlists.component";
+import {MatButtonModule} from "@angular/material/button";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, PlaylistsComponent],
+  imports: [CommonModule, PlaylistsComponent, MatButtonModule],
   templateUrl: 'home.component.html',
 })
 export class HomeComponent implements OnInit {
