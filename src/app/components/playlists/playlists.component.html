@@ -1,0 +1,8 @@
+<div>
+  <h1>Playlists</h1>
+  <div *ngIf="playlists">
+    <li *ngFor="let playlist of playlists">
+      {{ playlist.name }}
+    </li>
+  </div>
+</div>
