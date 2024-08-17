@@ -4,6 +4,7 @@ import {NgForOf, NgIf} from "@angular/common";
 import {Playlist} from "../../types";
 import {MatButtonModule} from "@angular/material/button";
 import {MatCard, MatCardContent} from "@angular/material/card";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-playlists',
@@ -21,7 +22,7 @@ import {MatCard, MatCardContent} from "@angular/material/card";
 export class PlaylistsComponent implements OnInit{
   playlists: Playlist[] | null = null;
 
-  constructor(private spotifyApiService: SpotifyApiService) {
+  constructor(private spotifyApiService: SpotifyApiService, private router: Router) {
   }
 
   ngOnInit() {
@@ -35,5 +36,9 @@ export class PlaylistsComponent implements OnInit{
         console.error('Error fetching user profile:', error);
       }
     );
+  }
+
+  openPlaylist(playlistId: string) {
+    this.router.navigate([`/playlist/${playlistId}`]);
   }
 }

@@ -6,6 +6,11 @@ export interface Playlist {
   tracks: {
     href: string;
     total: number;
+    items: {
+      added_at: string;
+      added_by: string;
+      track: Track
+    }[];
   };
   owner: SpotifyUser
 }
@@ -18,4 +23,18 @@ export interface SpotifyUser {
 
 export interface PlaylistResponse {
   items: Playlist[];
+}
+
+export interface Track {
+  id: string;
+  artists: Artist[];
+  is_playable: boolean;
+  name: string;
+  uri: string;
+}
+
+export interface Artist {
+  id: string;
+  name: string;
+  uri: string;
 }

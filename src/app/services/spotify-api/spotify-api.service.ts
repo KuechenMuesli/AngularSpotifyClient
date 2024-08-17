@@ -43,4 +43,10 @@ export class SpotifyApiService {
       }));
     }))
   }
+
+  getPlaylist(playlistId: string): Observable<Playlist> {
+    return this.http.get<Playlist>(`${this.baseUrl}/playlists/${playlistId}`, {
+      headers: this.getHeaders(),
+    });
+  }
 }
