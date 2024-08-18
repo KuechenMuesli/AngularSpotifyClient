@@ -12,4 +12,14 @@
 .sidenav-container {
   display: flex;
   flex-direction: column;
+  height: 100vh;
+}
+
+mat-sidenav {
+  overflow-y: auto; /* Enable scrolling within the sidenav */
+}
+
+mat-sidenav-content {
+  overflow-y: auto; /* Ensure main content can scroll */
+  height: 100vh; /* Full height of the viewport */
 }
