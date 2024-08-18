@@ -21,10 +21,10 @@ import {Router, RouterLink} from "@angular/router";
   templateUrl: './playlists.component.html',
   styleUrl: './playlists.component.css'
 })
-export class PlaylistsComponent implements OnInit{
+export class PlaylistsComponent implements OnInit {
   playlists: Playlist[] | null = null;
 
-  constructor(private spotifyApiService: SpotifyApiService, private router: Router) {
+  constructor(private spotifyApiService: SpotifyApiService) {
   }
 
   ngOnInit() {

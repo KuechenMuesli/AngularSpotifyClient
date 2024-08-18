@@ -5,11 +5,12 @@ import {MatIcon} from "@angular/material/icon";
 import {MatButton, MatIconButton} from "@angular/material/button";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {NgIf} from "@angular/common";
+import {SidenavPlaylistsComponent} from "../sidenav-playlists/sidenav-playlists.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatToolbar, MatIcon, MatIconButton, RouterLink, MatSidenavModule, NgIf, MatButton],
+  imports: [RouterOutlet, MatToolbar, MatIcon, MatIconButton, RouterLink, MatSidenavModule, NgIf, MatButton, SidenavPlaylistsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

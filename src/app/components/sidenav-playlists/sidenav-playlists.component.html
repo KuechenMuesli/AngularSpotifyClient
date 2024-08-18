@@ -3,14 +3,13 @@
   <div *ngIf="playlists">
     <mat-card *ngFor="let playlist of playlists"
               appearance="outlined"
-              class="m-2 card-container"
+              class="card-container"
               routerLink="playlist/{{playlist.id}}">
       <div class="card-content">
+        <img mat-card-image [src]="playlist.images[0].url" alt="Playlist Image" class="card-image">
         <mat-card-content class="text-content">
           <h3 class="card-title">{{ playlist.name }}</h3>
-          <p class="card-description">{{playlist.description ?? ''}}</p>
         </mat-card-content>
-        <img mat-card-image [src]="playlist.images[0].url" alt="Playlist Image" class="card-image">
       </div>
     </mat-card>
 
