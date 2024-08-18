@@ -4,7 +4,8 @@
     <mat-card *ngFor="let playlist of playlists"
               appearance="outlined"
               class="card-container"
-              [ngClass]="{'card-container-selected': currentPlaylistId == playlist.id}"
+              [ngClass]="{'card-container-selected-light': currentPlaylistId == playlist.id && !isDarkTheme(),
+                          'card-container-selected-dark': currentPlaylistId == playlist.id && isDarkTheme()}"
               routerLink="playlist/{{playlist.id}}"
               matRipple>
       <div class="card-content">

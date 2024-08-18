@@ -48,4 +48,8 @@ export class SidenavPlaylistsComponent implements OnInit {
       })
     );
   }
+
+  isDarkTheme(): boolean {
+    return this.spotifyApiService.isDarkTheme;
+  }
 }

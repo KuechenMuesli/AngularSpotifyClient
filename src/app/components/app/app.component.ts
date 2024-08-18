@@ -6,6 +6,7 @@ import {MatButton, MatIconButton} from "@angular/material/button";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {NgIf} from "@angular/common";
 import {SidenavPlaylistsComponent} from "../sidenav-playlists/sidenav-playlists.component";
+import {SpotifyApiService} from "../../services/spotify-api/spotify-api.service";
 
 @Component({
   selector: 'app-root',
@@ -17,8 +18,16 @@ import {SidenavPlaylistsComponent} from "../sidenav-playlists/sidenav-playlists.
 export class AppComponent {
   title = 'AngularSpotifyClient';
   sidenavOpened: boolean = true;
+  isDarkTheme: boolean = false;
+
+  constructor(private spotifyApiService: SpotifyApiService) {
+  }
 
   toggleSidenav() {
     this.sidenavOpened = !this.sidenavOpened;
+  }
+
+  toggleTheme() {
+    this.spotifyApiService.toggleTheme();
   }
 }

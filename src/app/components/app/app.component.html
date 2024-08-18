@@ -6,11 +6,12 @@
 
   <span routerLink="" style="cursor: pointer">Spoti Client</span>
   <span class="spacer"></span>
-  <button mat-icon-button color="primary">
-    <mat-icon>favorite</mat-icon>
+  <button mat-icon-button
+          (click)="toggleTheme()">
+    <mat-icon>contrast</mat-icon>
   </button>
-  <button mat-icon-button color="accent">
-    <mat-icon>share</mat-icon>
+  <button mat-icon-button>
+    <mat-icon>person</mat-icon>
   </button>
 </mat-toolbar>
 

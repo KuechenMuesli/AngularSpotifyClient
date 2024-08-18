@@ -9,6 +9,7 @@ import {Playlist, PlaylistResponse} from "../../types";
 export class SpotifyApiService {
   private baseUrl = 'https://api.spotify.com/v1';
   public selectedPlaylist: BehaviorSubject<string> = new BehaviorSubject<string>("");
+  isDarkTheme: boolean = false;
 
   constructor(private http: HttpClient) {}
 
@@ -53,5 +54,11 @@ export class SpotifyApiService {
 
   setSelectedPlaylist(playlistId: string): void {
     this.selectedPlaylist.next(playlistId);
+  }
+
+  toggleTheme() {
+    this.isDarkTheme = !this.isDarkTheme;
+    const theme = this.isDarkTheme ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', theme);
   }
 }
