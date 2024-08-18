@@ -1,0 +1,33 @@
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.text-content {
+  flex-grow: 1;
+}
+
+.card-title {
+  margin: 0;
+  font-weight: bold;
+}
+
+.card-description {
+  margin: 4px 0 0 0;
+  color: #555;
+}
+
+.card-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}

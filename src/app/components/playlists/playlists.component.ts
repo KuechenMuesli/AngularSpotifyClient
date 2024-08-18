@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {SpotifyApiService} from "../../services/spotify-api/spotify-api.service";
-import {NgForOf, NgIf} from "@angular/common";
+import {NgClass, NgForOf, NgIf} from "@angular/common";
 import {Playlist} from "../../types";
 import {MatButtonModule} from "@angular/material/button";
 import {MatCard, MatCardContent} from "@angular/material/card";
-import {Router} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-playlists',
@@ -14,7 +14,9 @@ import {Router} from "@angular/router";
     NgIf,
     MatButtonModule,
     MatCard,
-    MatCardContent
+    MatCardContent,
+    RouterLink,
+    NgClass
   ],
   templateUrl: './playlists.component.html',
   styleUrl: './playlists.component.css'
@@ -36,9 +38,5 @@ export class PlaylistsComponent implements OnInit{
         console.error('Error fetching user profile:', error);
       }
     );
-  }
-
-  openPlaylist(playlistId: string) {
-    this.router.navigate([`/playlist/${playlistId}`]);
   }
 }

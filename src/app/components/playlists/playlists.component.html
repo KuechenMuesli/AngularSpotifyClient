@@ -3,10 +3,17 @@
   <div *ngIf="playlists">
     <mat-card *ngFor="let playlist of playlists"
               appearance="outlined"
-              class="m-2"
+              class="m-2 card-container"
               style="max-width: 700px; cursor: pointer;"
-              (click)="openPlaylist(playlist.id)">
-      <mat-card-content>{{ playlist.name }}</mat-card-content>
+              routerLink="playlist/{{playlist.id}}">
+      <div class="card-content">
+        <mat-card-content class="text-content">
+          <h3 class="card-title">{{ playlist.name }}</h3>
+          <p class="card-description">{{playlist.description ?? ''}}</p>
+        </mat-card-content>
+        <img mat-card-image [src]="playlist.images[0].url" alt="Playlist Image" class="card-image">
+      </div>
     </mat-card>
+
   </div>
 </div>

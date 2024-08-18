@@ -1,3 +1,31 @@
-<div>
-  <router-outlet></router-outlet>
-</div>
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="toggleSidenav()">
+    <mat-icon *ngIf="sidenavOpened">
+      chevron_left
+    </mat-icon>
+    <mat-icon *ngIf="!sidenavOpened">
+      chevron_right
+    </mat-icon>
+  </button>
+  <span routerLink="" style="cursor: pointer">Spoti Client</span>
+  <span class="spacer"></span>
+  <button mat-icon-button>
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button>
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav mode="side"
+               [opened]="sidenavOpened"
+               style="padding:20px;">
+    Sidenav content
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="m-2">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

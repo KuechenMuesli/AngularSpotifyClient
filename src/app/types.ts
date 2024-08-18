@@ -12,7 +12,13 @@ export interface Playlist {
       track: Track
     }[];
   };
-  owner: SpotifyUser
+  owner: SpotifyUser;
+  images: {
+    url: string;
+    height: number;
+    width: number;
+  }[];
+  description: string | null;
 }
 
 export interface SpotifyUser {

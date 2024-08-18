@@ -1,8 +1,18 @@
 <div>
-  <h1>User Profile</h1>
-  <button (click)="login()"
-          mat-raised-button
-          color="primary">Login with Spotify</button>
+  <h1 class="mb-2">Dashboard</h1>
+  <div *ngIf="!userProfile" style="max-width: 800px;">
+    <p>
+      You are currently not logged in with Spotify.
+      This application needs to be authorized by you to access your playlists and function
+      properly.
+    </p>
+    <button (click)="login()"
+            mat-raised-button
+            [ngStyle]="{'background-color': '#1DB954', 'color': 'white'}">
+      <i class="fab fa-spotify"></i>
+      Login with Spotify
+    </button>
+  </div>
 
   <app-playlists *ngIf="userProfile"></app-playlists>
 </div>
