@@ -32,7 +32,6 @@ export class PlaylistsComponent implements OnInit {
       .subscribe(
       data => {
         this.playlists = data;
-        console.log(data);
       },
       (error: any) => {
         console.error('Error fetching user profile:', error);

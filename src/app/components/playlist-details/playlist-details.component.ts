@@ -16,7 +16,7 @@ import {MatCard, MatCardContent} from "@angular/material/card";
     MatCardContent
   ],
   templateUrl: './playlist-details.component.html',
-  styleUrl: './playlist-details.component.css'
+  styleUrl: './playlist-details.component.scss'
 })
 export class PlaylistDetailsComponent implements OnInit {
   playlist: Playlist | null = null;
@@ -33,8 +33,8 @@ export class PlaylistDetailsComponent implements OnInit {
       return of();
     })).subscribe({
       next: playlist => {
-        console.log(playlist.tracks.items)
         this.playlist = playlist;
+        this.spotifyApiService.selectedPlaylist.next(playlist.id);
       }
     });
   }

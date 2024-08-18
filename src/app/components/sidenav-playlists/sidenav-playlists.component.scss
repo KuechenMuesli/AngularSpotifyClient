@@ -1,3 +1,6 @@
+@use "../../../styles" as styles;
+@use "@angular/material" as mat;
+
 .card-container {
   display: flex;
   align-items: center;
@@ -7,6 +10,10 @@
   max-height: 100px;
   cursor: pointer;
   margin-bottom: 10px;
+}
+
+.card-container-selected {
+  background: mat.get-theme-color(styles.$theme, primary-container);
 }
 
 .card-content {

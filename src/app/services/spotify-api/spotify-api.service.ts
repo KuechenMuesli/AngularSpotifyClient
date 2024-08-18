@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {map, Observable, switchMap} from 'rxjs';
+import {BehaviorSubject, map, Observable, switchMap} from 'rxjs';
 import {Playlist, PlaylistResponse} from "../../types";
 
 @Injectable({
@@ -8,6 +8,7 @@ import {Playlist, PlaylistResponse} from "../../types";
 })
 export class SpotifyApiService {
   private baseUrl = 'https://api.spotify.com/v1';
+  public selectedPlaylist: BehaviorSubject<string> = new BehaviorSubject<string>("");
 
   constructor(private http: HttpClient) {}
 
@@ -48,5 +49,9 @@ export class SpotifyApiService {
     return this.http.get<Playlist>(`${this.baseUrl}/playlists/${playlistId}`, {
       headers: this.getHeaders(),
     });
+  }
+
+  setSelectedPlaylist(playlistId: string): void {
+    this.selectedPlaylist.next(playlistId);
   }
 }

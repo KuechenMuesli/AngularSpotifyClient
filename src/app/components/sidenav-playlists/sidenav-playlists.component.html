@@ -4,6 +4,7 @@
     <mat-card *ngFor="let playlist of playlists"
               appearance="outlined"
               class="card-container"
+              [ngClass]="{'card-container-selected': currentPlaylistId == playlist.id}"
               routerLink="playlist/{{playlist.id}}">
       <div class="card-content">
         <img mat-card-image [src]="playlist.images[0].url" alt="Playlist Image" class="card-image">
