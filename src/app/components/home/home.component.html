@@ -1,5 +1,4 @@
 <div>
-  <h1 class="mb-2">Dashboard</h1>
   <div *ngIf="!userProfile" style="max-width: 800px;">
     <p>
       You are currently not logged in with Spotify.
@@ -14,5 +13,8 @@
     </button>
   </div>
 
-  <app-playlists *ngIf="userProfile"></app-playlists>
+  <div *ngIf="userProfile">
+    <h1 class="mb-2">Welcome, {{userProfile.display_name}}!</h1>
+    <app-playlists></app-playlists>
+  </div>
 </div>

@@ -59,3 +59,16 @@ export interface Album {
   name: string;
   artists: Artist[];
 }
+
+export interface SpotifyUser {
+  id: string;
+  display_name: string;
+  email: string;
+  country: string;
+  uri: string;
+  images: {
+    url: string;
+    height: number;
+    width: number;
+  }[]
+}

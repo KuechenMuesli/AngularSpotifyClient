@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {BehaviorSubject, map, Observable, switchMap} from 'rxjs';
-import {Playlist, PlaylistResponse} from "../../types";
+import {Playlist, PlaylistResponse, SpotifyUser} from "../../types";
 
 @Injectable({
   providedIn: 'root',
@@ -24,8 +24,8 @@ export class SpotifyApiService {
     });
   }
 
-  getUserProfile(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/me`, {
+  getUserProfile(): Observable<SpotifyUser> {
+    return this.http.get<SpotifyUser>(`${this.baseUrl}/me`, {
       headers: this.getHeaders(),
     });
   }

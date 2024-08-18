@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import {PlaylistsComponent} from "../playlists/playlists.component";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIcon} from "@angular/material/icon";
+import {SpotifyUser} from "../../types";
 
 @Component({
   selector: 'app-home',
@@ -12,14 +13,14 @@ import {MatIcon} from "@angular/material/icon";
   templateUrl: 'home.component.html',
 })
 export class HomeComponent implements OnInit {
-  userProfile: any;
+  userProfile: SpotifyUser | null = null;
   loading = true;
 
   constructor(private spotifyApiService: SpotifyApiService) {}
 
   ngOnInit() {
     this.spotifyApiService.getUserProfile().subscribe(
-      (data: any) => {
+      (data: SpotifyUser) => {
         this.userProfile = data;
         this.loading = false;
       },
