@@ -1,6 +1,36 @@
-@use "../../../styles" as styles;
-@use "@angular/material" as mat;
+.playlist-image {
+  width: 600px;
+  height: 600px;
+  border-radius: 18px;
+}
+
+.title {
+  max-width: 600px;
+}
 
 .song-card {
-  margin: 20px;
+  display: flex;
+  justify-content: space-between; /* Keeps the text on the left and image on the right */
+  padding: 10px;
+  margin: 10px 0;
+  max-width: 600px;
+}
+
+.card-content {
+  display: flex;
+  width: 100%;
+  align-items: center; /* Vertically centers the content */
+}
+
+.text-content {
+  margin-left: 10px;
+  flex-grow: 1; /* Allows the text content to take up all available space */
+}
+
+.track-image {
+  width: 60px;
+  height: 60px;
+  margin-left: auto; /* Pushes the image to the far right */
+  object-fit: contain; /* Ensures the image fits within its container */
+  border-radius: 6px;
 }

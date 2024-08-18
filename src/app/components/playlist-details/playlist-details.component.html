@@ -1,18 +1,22 @@
 <div *ngIf="playlist">
-  <h1>{{playlist.name}}</h1>
+  <img [src]="playlist.images[0].url" alt="Playlist Image" class="playlist-image">
+  <h1 class="title">{{playlist.name}}</h1>
 
-  <p style="max-width: 700px;">
+  <p style="max-width: 600px;">
     {{playlist.description}}
   </p>
 
-  <mat-card *ngFor="let track of playlist.tracks.items"
-            class="song-card"
-            style="max-width: 700px; margin-left: 0;">
+  <mat-card *ngFor="let track of playlist.tracks.items" class="song-card">
     <mat-card-content>
-      {{track.track.name}} •
-      <span *ngFor="let artist of track.track.artists; let last = last">
-        {{ artist.name }}<span *ngIf="!last">,</span>
-      </span>
+      <div class="card-content">
+        <img [src]="track.track.album.images[0].url" alt="Track Image" class="track-image">
+        <div class="text-content">
+          <strong>{{track.track.name}}</strong><br>
+          <span *ngFor="let artist of track.track.artists; let last = last">
+            {{ artist.name }}<span *ngIf="!last">,</span>
+          </span>
+        </div>
+      </div>
     </mat-card-content>
   </mat-card>
 </div>

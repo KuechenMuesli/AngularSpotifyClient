@@ -4,7 +4,7 @@ import {ActivatedRoute} from "@angular/router";
 import {of, switchMap} from "rxjs";
 import {SpotifyApiService} from "../../services/spotify-api/spotify-api.service";
 import {NgForOf, NgIf} from "@angular/common";
-import {MatCard, MatCardContent} from "@angular/material/card";
+import {MatCard, MatCardContent, MatCardTitle} from "@angular/material/card";
 
 @Component({
   selector: 'app-playlist-details',
@@ -13,7 +13,8 @@ import {MatCard, MatCardContent} from "@angular/material/card";
     NgIf,
     NgForOf,
     MatCard,
-    MatCardContent
+    MatCardContent,
+    MatCardTitle
   ],
   templateUrl: './playlist-details.component.html',
   styleUrl: './playlist-details.component.scss'

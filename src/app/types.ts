@@ -37,10 +37,25 @@ export interface Track {
   is_playable: boolean;
   name: string;
   uri: string;
+  album: Album;
 }
 
 export interface Artist {
   id: string;
   name: string;
   uri: string;
+}
+
+
+export interface Album {
+  album_type: "single" | "album" | "compilation";
+  id: string;
+  total_tracks: number;
+  images: {
+    url: string;
+    height: number;
+    width: number
+  }[];
+  name: string;
+  artists: Artist[];
 }

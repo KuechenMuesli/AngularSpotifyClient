@@ -5,6 +5,7 @@ import {ActivatedRoute, NavigationEnd, Router, RouterLink} from "@angular/router
 import {MatCard, MatCardContent} from "@angular/material/card";
 import {NgClass, NgForOf, NgIf} from "@angular/common";
 import {map, of, Subscription, switchMap} from "rxjs";
+import {MatRipple} from "@angular/material/core";
 
 @Component({
   selector: 'app-sidenav-playlists',
@@ -15,7 +16,8 @@ import {map, of, Subscription, switchMap} from "rxjs";
     NgForOf,
     NgIf,
     RouterLink,
-    NgClass
+    NgClass,
+    MatRipple
   ],
   templateUrl: './sidenav-playlists.component.html',
   styleUrl: './sidenav-playlists.component.scss'
