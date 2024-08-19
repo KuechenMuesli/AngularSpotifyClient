@@ -5,6 +5,7 @@ import {Playlist} from "../../types";
 import {MatButtonModule} from "@angular/material/button";
 import {MatCard, MatCardContent} from "@angular/material/card";
 import {Router, RouterLink} from "@angular/router";
+import {MatRipple} from "@angular/material/core";
 
 @Component({
   selector: 'app-playlists',
@@ -16,7 +17,8 @@ import {Router, RouterLink} from "@angular/router";
     MatCard,
     MatCardContent,
     RouterLink,
-    NgClass
+    NgClass,
+    MatRipple
   ],
   templateUrl: './playlists.component.html',
   styleUrl: './playlists.component.css'

@@ -6,6 +6,7 @@
   max-width: 700px;
   cursor: pointer;
   margin-left: 0;
+  user-select: none;
 }
 
 .card-content {

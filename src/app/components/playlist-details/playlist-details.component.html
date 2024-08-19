@@ -6,18 +6,37 @@
     {{playlist.description}}
   </p>
 
-  <mat-card *ngFor="let track of playlist.tracks.items" class="song-card"
-            (click)="playTrack(track.track.uri)" matRipple>
-    <mat-card-content>
-      <div class="card-content">
-        <img [src]="track.track.album.images[0].url" alt="Track Image" class="track-image">
-        <div class="text-content">
-          <strong>{{track.track.name}}</strong><br>
-          <span *ngFor="let artist of track.track.artists; let last = last">
-            {{ artist.name }}<span *ngIf="!last">,</span>
-          </span>
+  <mat-card *ngFor="let track of playlist.tracks.items"
+            appearance="raised"
+            class="song-card"
+            (click)="playTrack(track.track.uri)"
+            matRipple>
+    <div>
+      <mat-card-content>
+        <div class="card-content">
+          <img [src]="track.track.album.images[0].url" alt="Track Image" class="track-image">
+          <div class="text-content">
+            <strong>{{track.track.name}}</strong><br>
+            <span *ngFor="let artist of track.track.artists; let last = last">
+              {{ artist.name }}<span *ngIf="!last">,</span>
+            </span>
+          </div>
         </div>
-      </div>
-    </mat-card-content>
+      </mat-card-content>
+    </div>
+  </mat-card>
+
+
+  <mat-card *ngFor="let playlist of playlist.tracks.items"
+            appearance="raised"
+            class="m-2 card-container"
+            routerLink="playlist/{{playlist.track.id}}"
+            matRipple>
+    <div class="card-content">
+      <mat-card-content class="text-content">
+        <h3 class="card-title">{{ playlist.track.name }}</h3>
+      </mat-card-content>
+      <img mat-card-image [src]="playlist.track.album.images[0].url" alt="Playlist Image" class="card-image">
+    </div>
   </mat-card>
 </div>

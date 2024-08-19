@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Playlist} from "../../types";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, RouterLink} from "@angular/router";
 import {of, switchMap} from "rxjs";
 import {SpotifyApiService} from "../../services/spotify-api/spotify-api.service";
 import {NgForOf, NgIf} from "@angular/common";
@@ -17,7 +17,8 @@ import {MatRipple} from "@angular/material/core";
     MatCard,
     MatCardContent,
     MatCardTitle,
-    MatRipple
+    MatRipple,
+    RouterLink
   ],
   templateUrl: './playlist-details.component.html',
   styleUrl: './playlist-details.component.scss'

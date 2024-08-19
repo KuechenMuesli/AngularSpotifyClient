@@ -11,9 +11,10 @@
 .song-card {
   display: flex;
   justify-content: space-between; /* Keeps the text on the left and image on the right */
-  padding: 10px;
   margin: 10px 0;
   max-width: 600px;
+  cursor: pointer;
+  user-select: none;
 }
 
 .card-content {

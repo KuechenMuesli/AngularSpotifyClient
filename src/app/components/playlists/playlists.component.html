@@ -2,9 +2,10 @@
   <h2>Playlists</h2>
   <div *ngIf="playlists">
     <mat-card *ngFor="let playlist of playlists"
-              appearance="outlined"
+              appearance="raised"
               class="m-2 card-container"
-              routerLink="playlist/{{playlist.id}}">
+              routerLink="playlist/{{playlist.id}}"
+              matRipple>
       <div class="card-content">
         <mat-card-content class="text-content">
           <h3 class="card-title">{{ playlist.name }}</h3>
@@ -13,6 +14,5 @@
         <img mat-card-image [src]="playlist.images[0].url" alt="Playlist Image" class="card-image">
       </div>
     </mat-card>
-
   </div>
 </div>
