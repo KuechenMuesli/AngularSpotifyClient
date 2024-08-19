@@ -5,6 +5,8 @@ import {of, switchMap} from "rxjs";
 import {SpotifyApiService} from "../../services/spotify-api/spotify-api.service";
 import {NgForOf, NgIf} from "@angular/common";
 import {MatCard, MatCardContent, MatCardTitle} from "@angular/material/card";
+import {SpotifyPlayerService} from "../../services/spotify-player/spotify-player.service";
+import {MatRipple} from "@angular/material/core";
 
 @Component({
   selector: 'app-playlist-details',
@@ -14,7 +16,8 @@ import {MatCard, MatCardContent, MatCardTitle} from "@angular/material/card";
     NgForOf,
     MatCard,
     MatCardContent,
-    MatCardTitle
+    MatCardTitle,
+    MatRipple
   ],
   templateUrl: './playlist-details.component.html',
   styleUrl: './playlist-details.component.scss'
@@ -22,7 +25,8 @@ import {MatCard, MatCardContent, MatCardTitle} from "@angular/material/card";
 export class PlaylistDetailsComponent implements OnInit {
   playlist: Playlist | null = null;
 
-  constructor(private route: ActivatedRoute, private spotifyApiService: SpotifyApiService) {
+  constructor(private route: ActivatedRoute, private spotifyApiService: SpotifyApiService,
+              private spotifyPlayerService: SpotifyPlayerService) {
   }
 
   ngOnInit() {
@@ -38,5 +42,9 @@ export class PlaylistDetailsComponent implements OnInit {
         this.spotifyApiService.selectedPlaylist.next(playlist.id);
       }
     });
+  }
+
+  playTrack(uri: string) {
+    this.spotifyPlayerService.playTrack(uri);
   }
 }

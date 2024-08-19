@@ -8,8 +8,8 @@ export interface Playlist {
     total: number;
     items: {
       added_at: string;
-      added_by: string;
-      track: Track
+      added_by: SpotifyUser;
+      track: Track;
     }[];
   };
   owner: SpotifyUser;
@@ -22,9 +22,16 @@ export interface Playlist {
 }
 
 export interface SpotifyUser {
-  display_name: string;
   id: string;
-  href: string;
+  display_name: string;
+  email: string;
+  country: string;
+  uri: string;
+  images: {
+    url: string;
+    height: number;
+    width: number;
+  }[];
 }
 
 export interface PlaylistResponse {
@@ -46,7 +53,6 @@ export interface Artist {
   uri: string;
 }
 
-
 export interface Album {
   album_type: "single" | "album" | "compilation";
   id: string;
@@ -54,21 +60,14 @@ export interface Album {
   images: {
     url: string;
     height: number;
-    width: number
+    width: number;
   }[];
   name: string;
   artists: Artist[];
 }
 
-export interface SpotifyUser {
-  id: string;
-  display_name: string;
-  email: string;
-  country: string;
-  uri: string;
-  images: {
-    url: string;
-    height: number;
-    width: number;
-  }[]
+export interface TrackWindow {
+  current_track: Track;
+  previous_tracks: Track[];
+  next_tracks: Track[];
 }

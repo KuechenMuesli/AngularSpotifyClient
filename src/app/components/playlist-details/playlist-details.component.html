@@ -6,7 +6,8 @@
     {{playlist.description}}
   </p>
 
-  <mat-card *ngFor="let track of playlist.tracks.items" class="song-card">
+  <mat-card *ngFor="let track of playlist.tracks.items" class="song-card"
+            (click)="playTrack(track.track.uri)" matRipple>
     <mat-card-content>
       <div class="card-content">
         <img [src]="track.track.album.images[0].url" alt="Track Image" class="track-image">
