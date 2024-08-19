@@ -32,8 +32,8 @@ export class HomeComponent implements OnInit {
   }
 
   login() {
-    const clientId = '8845a843732e4a9dad8c7256a570923e'; // Replace with your actual Spotify client ID
-    const redirectUri = 'http://192.168.178.62:4200/callback'; // Replace with your redirect URI
+    const clientId = '8845a843732e4a9dad8c7256a570923e';
+    const redirectUri = 'http://192.168.178.62:4200/callback';
     const scopes = "playlist-read-private playlist-read-collaborative user-library-read user-modify-playback-state user-read-playback-state "
     "user-read-currently-playing user-read-recently-played user-follow-read user-follow-modify user-top-read "
     "user-read-email user-read-private streaming app-remote-control playlist-modify-public playlist-modify-private "
