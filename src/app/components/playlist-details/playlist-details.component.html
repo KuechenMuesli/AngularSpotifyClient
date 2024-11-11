@@ -25,18 +25,4 @@
       </mat-card-content>
     </div>
   </mat-card>
-
-
-  <mat-card *ngFor="let playlist of playlist.tracks.items"
-            appearance="raised"
-            class="m-2 card-container"
-            routerLink="playlist/{{playlist.track.id}}"
-            matRipple>
-    <div class="card-content">
-      <mat-card-content class="text-content">
-        <h3 class="card-title">{{ playlist.track.name }}</h3>
-      </mat-card-content>
-      <img mat-card-image [src]="playlist.track.album.images[0].url" alt="Playlist Image" class="card-image">
-    </div>
-  </mat-card>
 </div>
