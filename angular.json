@@ -26,7 +26,7 @@
                 "input": "public"
               },
               {
-                "glob": "staticwebapp.config.json",
+                "glob": "web.config",
                 "input": "src",
                 "output": "."
               }
@@ -92,7 +92,7 @@
                 "input": "public"
               },
               {
-                "glob": "staticwebapp.config.json",
+                "glob": "web.config",
                 "input": "src",
                 "output": "."
               }
