@@ -3,6 +3,10 @@
     {
       "route": "/*",
       "serve": "/index.html"
+    },
+    {
+      "route": "/callback*",
+      "serve": "/index.html"
     }
   ]
 }
